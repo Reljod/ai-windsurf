@@ -1,0 +1,87 @@
+openapi: 3.0.3
+info:
+  title: ChatGPT API
+  description: A REST API for interacting with ChatGPT
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8000
+    description: Local development server
+  - url: https://api.example.com
+    description: Production server
+
+paths:
+  /api/v1/chat:
+    post:
+      summary: Create a new chat interaction
+      description: Send a message to ChatGPT and receive a response
+      operationId: createChat
+      tags:
+        - chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatCreate'
+      responses:
+        '200':
+          description: Successful chat interaction
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  detail:
+                    type: string
+
+components:
+  schemas:
+    ChatBase:
+      type: object
+      required:
+        - content
+      properties:
+        content:
+          type: string
+          description: The message content to send to ChatGPT
+        max_tokens:
+          type: integer
+          description: Maximum number of tokens in the response
+          default: 150
+
+    ChatCreate:
+      allOf:
+        - $ref: '#/components/schemas/ChatBase'
+
+    ChatResponse:
+      type: object
+      required:
+        - id
+        - content
+        - response
+        - created_at
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the chat interaction
+        content:
+          type: string
+          description: The original message content
+        response:
+          type: string
+          description: The response from ChatGPT
+        created_at:
+          type: string
+          format: date-time
+          description: Timestamp of when the chat was created
+        tokens_used:
+          type: integer
+          description: Number of tokens used in the interaction
+          nullable: true

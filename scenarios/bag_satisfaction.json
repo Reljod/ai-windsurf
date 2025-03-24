@@ -1,0 +1,64 @@
+{
+  "product_satisfaction_data": [
+    {
+      "product_id": "BAG001",
+      "product_name": "Urban Commuter Backpack",
+      "category": "Bags",
+      "price": 89.99,
+      "satisfaction_metrics": {
+        "average_rating": 4.7,
+        "total_reviews": 128,
+        "satisfaction_score": 92,
+        "key_feedback": {
+          "durability": 4.8,
+          "comfort": 4.6,
+          "value_for_money": 4.5
+        },
+        "recommendation_rate": 95
+      },
+      "last_updated": "2025-03-24T13:25:24Z"
+    },
+    {
+      "product_id": "BAG002",
+      "product_name": "Classic Leather Tote",
+      "category": "Bags",
+      "price": 149.99,
+      "satisfaction_metrics": {
+        "average_rating": 4.5,
+        "total_reviews": 85,
+        "satisfaction_score": 88,
+        "key_feedback": {
+          "durability": 4.7,
+          "style": 4.8,
+          "value_for_money": 4.2
+        },
+        "recommendation_rate": 87
+      },
+      "last_updated": "2025-03-24T13:25:24Z"
+    },
+    {
+      "product_id": "BAG003",
+      "product_name": "Travel Duffel Bag",
+      "category": "Bags",
+      "price": 75.99,
+      "satisfaction_metrics": {
+        "average_rating": 4.3,
+        "total_reviews": 156,
+        "satisfaction_score": 85,
+        "key_feedback": {
+          "durability": 4.4,
+          "capacity": 4.6,
+          "value_for_money": 4.5
+        },
+        "recommendation_rate": 82
+      },
+      "last_updated": "2025-03-24T13:25:24Z"
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "generated_at": "2025-03-24T13:25:24Z",
+    "data_type": "customer_satisfaction",
+    "category": "bags"
+  }
+}
